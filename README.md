@@ -19,25 +19,14 @@ registering **step by step**, and **refining** the composed flow — improving a
 
 ### Pipeline
 
-```
-   before (A)                                        after (B / B_affine)
-      │                                                      │
-      ▼                                                      ▼
-┌─────────────────── Stage 1: diffusion morphing ───────────────────┐
-│  DiffMorpher (Stable Diffusion 2.1) → frames 00.png 01 02 03 04    │
-└───────────────────────────────────────────────────────────────────┘
-      │
-      ▼
-┌─────────────────── Stage 2: stepwise RoMa + compose ──────────────┐
-│  RoMa flow  00→01→02→03→04, composed into a single 00→04 flow      │
-│  → roma_flow.npy                                                   │
-└───────────────────────────────────────────────────────────────────┘
-      │
-      ▼
-┌─────────────────── Stage 3: residual refinement ──────────────────┐
-│  lightweight U-Net:  refined_flow = roma_flow + residual  → warp   │
-└───────────────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="assets/pipeline.png" width="100%" alt="Morphing Through Time pipeline: DiffMorpher intermediate frames → stepwise RoMa → composed flow → residual refinement → warp → CD backbone">
+</p>
+
+Given a bi-temporal pair `(I_A, I_B)`, **DiffMorpher** synthesizes `K=5` intermediate
+frames; **RoMa** estimates the flow between consecutive frames, which is **composed** into
+`F_{A→B}`; a **residual flow refinement** U-Net corrects it to `F̂_{A→B}`; the refined flow
+**warps** `I_B` onto `I_A`, and the aligned pair is fed to any (frozen) **CD backbone**.
 
 > **Note.** This is a modular **research pipeline** run as a few sequential steps (not a
 > single command). Each stage reads the previous stage's output from disk.
