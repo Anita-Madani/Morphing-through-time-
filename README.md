@@ -132,9 +132,10 @@ to any existing CD network unchanged.
 
 Only the trained Stage-3 refiner checkpoints are hosted (SD 2.1 / RoMa auto-download):
 
+Weights: [`Anita1379m/morphingthroughtime`](https://huggingface.co/Anita1379m/morphingthroughtime)
+
 ```bash
 pip install -U huggingface_hub
-export MTT_HF_REPO=<HF_USER>/MorphingThroughTime   # set once weights are uploaded
 bash scripts/download_weights.sh
 ```
 

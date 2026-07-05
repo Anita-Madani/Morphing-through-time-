@@ -11,8 +11,7 @@
 #   bash scripts/download_weights.sh levir      # one dataset
 set -euo pipefail
 
-# TODO: set to your Hugging Face model repo once weights are uploaded.
-HF_REPO="${MTT_HF_REPO:-<HF_USER>/MorphingThroughTime}"
+HF_REPO="${MTT_HF_REPO:-Anita1379m/morphingthroughtime}"
 DST="checkpoints"
 mkdir -p "$DST"
 
