@@ -1,0 +1,26 @@
+# Core
+torch>=1.13
+torchvision
+numpy
+pandas
+pillow
+opencv-python
+tqdm
+
+# Stage 1 — diffusion morphing (DiffMorpher / Stable Diffusion 2.1)
+diffusers
+transformers
+accelerate
+safetensors
+einops
+lpips
+packaging
+
+# Stage 2 — RoMa dense registration
+# Install from source (not on PyPI):
+#   pip install git+https://github.com/Parskatt/RoMa.git
+# (provides the `romatch` package used by stage2_register/compose_flow.py)
+
+# Stage 3 — residual refiner (visualization/metrics)
+matplotlib
+flow_vis

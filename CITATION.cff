@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the following paper."
+title: "Morphing Through Time: Diffusion-Based Bridging of Temporal Gaps for Robust Alignment in Change Detection"
+authors:
+  - family-names: Madani
+    given-names: Seyedehanita
+  - family-names: Patel
+    given-names: "Vishal M."
+year: 2025
+identifiers:
+  - type: other
+    value: "arXiv:2511.07976"
+    description: arXiv preprint
+url: "https://arxiv.org/abs/2511.07976"
+preferred-citation:
+  type: article
+  title: "Morphing Through Time: Diffusion-Based Bridging of Temporal Gaps for Robust Alignment in Change Detection"
+  authors:
+    - family-names: Madani
+      given-names: Seyedehanita
+    - family-names: Patel
+      given-names: "Vishal M."
+  year: 2025
+  journal: "arXiv preprint arXiv:2511.07976"
